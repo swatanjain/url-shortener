@@ -100,8 +100,19 @@
 	</dependencies>
 
 	<build>
+
+		<resources>
+			<resource>
+				<directory>${project.build.directory}/classes/META-INF/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.html</include>
+				</includes>
+			</resource>
+		</resources>
+
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -113,7 +124,7 @@
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.asciidoctor</groupId>
 				<artifactId>asciidoctor-maven-plugin</artifactId>
@@ -132,12 +143,12 @@
 								<snippets>${project.build.directory}/generated-snippets</snippets>
 							</attributes>
 							<sourceDirectory>src/main/asciidoc</sourceDirectory>
-							<outputDirectory>target/classes/META-INF/resources</outputDirectory>
+							<outputDirectory>${project.build.directory}/classes/META-INF/resources</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -150,7 +161,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 
