@@ -1,0 +1,18 @@
+= URL Shortner REST API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:toc-title: Services
+:sectlinks: 
+
+The URL Shortner Service enables users to register lengthy URL(s) and get a compact URL in return which is convenient to share/brodcast.
+
+include::opening_of_accounts.adoc[]
+include::registration_of_urls.adoc[]
+include::retrieval_of_statistics.adoc[]
+
+== Redirecting
+
+After successful account creation and URL registration the shortened URL can be used to redirect the client on the configured address with the configured http status.

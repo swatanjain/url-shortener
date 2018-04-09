@@ -1,0 +1,66 @@
+== Registration of URLs
+
+Supports registration of full-length URL(s) under given user account. User account information is extracted from the authorization header.
+
+=== URI
+	/register
+
+=== Method
+	POST
+
+==== Request structure
+
+include::{snippets}/test-register-url/http-request.adoc[]
+
+==== Request parameters
+
+|===
+|Parameter |Description |Parameter Type | Required 
+
+|url
+|full length url to register
+|body
+|true
+
+|redirectType
+|HTTP redirect status to be returned to the client/browser when redirect request will be made. Defaults to 302 if not specified.
+|body
+|false
+|===
+
+==== Response parameters
+
+|===
+|Parameter |Description |Parameter Type | Always 
+
+|shortUrl
+|the shortened URL
+|body
+|true
+|===
+
+==== Example response
+
+include::{snippets}/test-register-url/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/test-register-url/curl-request.adoc[]
+
+==== Error reponses
+
+|===
+|Error message |Reason | HTTP Status
+
+|Unauthorized
+|Access is denied
+|401 Unauthorized
+
+|url cannot be empty
+|Parameter "url" not provided or is empty in request body
+|400 BAD_REQUEST
+
+|redirectType can only be 301\|302
+|Invalid parameter "redirectType" in the request body
+|400 BAD_REQUEST
+|===

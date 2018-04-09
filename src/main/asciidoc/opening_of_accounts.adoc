@@ -1,0 +1,67 @@
+== Opening of accounts
+
+Supports creation of new user accounts.
+
+=== URI
+	/account
+
+=== Method
+	POST
+
+==== Request structure
+
+include::{snippets}/test-create-account/http-request.adoc[]
+
+==== Request parameters
+
+|===
+|Parameter |Description |Parameter Type | Required 
+
+|AccountId
+|an unique identifier for the account
+|body
+|true
+|===
+
+==== Response parameters
+
+|===
+|Parameter |Description |Parameter Type | Always 
+
+|success
+|indicates whether the request succeeded or failed
+|body
+|true
+
+|description
+|general description
+|body
+|true
+
+|password
+|auto-generated, returned only when account is successfully created
+|body
+|false
+|===
+
+==== Example response
+
+include::{snippets}/test-create-account/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/test-create-account/curl-request.adoc[]
+
+==== Error reponses
+
+|===
+|Error message |Reason | HTTP Status 
+
+|AccountId cannot be empty
+|Parameter "AccountId" not provided or is empty in request body
+|400 BAD_REQUEST
+
+|AccountId already exists
+|Account with that ID already exists
+|400 BAD_REQUEST
+|===

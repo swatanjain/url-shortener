@@ -1,0 +1,56 @@
+== Retrieval of statistics
+
+Supports retrieval of account statistics i.e. list of all registered URL(s).
+
+=== URI
+	/statistic/{AccountId}
+
+=== Method
+	GET
+
+==== Request structure
+
+include::{snippets}/test-statistics/http-request.adoc[]
+
+==== Request parameters
+
+|===
+|Parameter |Description |Parameter Type | Required 
+
+|AccountId
+|the unique account ID
+|path
+|true
+|===
+
+==== Response parameters
+
+|===
+|Content |Parameter Type | Always 
+
+|The server responds with a JSON object, a *key:value* map where the key is the registered URL and the value is the number of redirects registered to that URL.
+|body
+|true
+|===
+
+==== Example response
+
+include::{snippets}/test-statistics/http-response.adoc[]
+
+==== CURL request
+
+include::{snippets}/test-statistics/curl-request.adoc[]
+
+==== Error reponses
+
+|===
+|Error message |Reason | HTTP Status
+
+|Unauthorized
+|Access is denied
+|401 Unauthorized
+
+|AccountId cannot be empty
+|Parameter "AccountId" not provided or is empty in request body
+|400 BAD_REQUEST
+|===
