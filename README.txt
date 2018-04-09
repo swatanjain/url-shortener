@@ -15,7 +15,8 @@
 4. Type: "cd ~/url-shortener" and press return.
 5. Type: "mvn clean install -X" and press return.
 6. Type: "java -jar target/url-shortener-1.0-RELEASE.jar" and press return.
-8. Now the server will try to boot. Wait for message "Started UrlShortenerApp in *.*** seconds"
-9. Once up, all service end-points can be accessed via url: http://<host>:<port>
+7. Now the server will try to boot. Wait for message "Started UrlShortenerApp in *.*** seconds"
+8. Once up, all service end-points can be accessed via url: http://<host>:<port>/
+9. Refer http://<host>:<port>/help URL for more details on services usage.
 
 Note: Application stores persistent data at "~/.urlshortener/data" directory.
