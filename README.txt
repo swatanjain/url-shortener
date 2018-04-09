@@ -17,6 +17,9 @@
 6. Type: "java -jar target/url-shortener-1.0-RELEASE.jar" and press return.
 7. Now the server will try to boot. Wait for message "Started UrlShortenerApp in *.*** seconds"
 8. Once up, all service end-points can be accessed via url: http://<host>:<port>/
-9. Refer http://<host>:<port>/help URL for more details on services usage.
+9. Refer any of below URL for more details on service usage:
+     http://<host>:<port>/help (local machine)
+       Or
+     https://swatanjain.github.io/url-shortener/ (github page)
 
 Note: Application stores persistent data at "~/.urlshortener/data" directory.
