@@ -109,10 +109,13 @@ public abstract class BaseRepository<T extends Identifiable<String>> {
 		 * 	delete the respective file manually to ensure consistency.
 		 */
 		String id = element.getId();
-		if (cache.containsKey(id)) {
+		File file = getElementFile(element.getId());
+		if ( cache.containsKey(id) || file.exists() ) {
+		
 			cache.remove(id);
-			FileUtils.forceDelete(getElementFile(element.getId()));
+			file.delete();
 			return true;
+			
 		}
 		return false;
 
