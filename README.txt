@@ -20,6 +20,6 @@
 9. Refer any of below URL for more details on service usage:
      http://<host>:<port>/help (local machine)
        Or
-     https://swatanjain.github.io/url-shortener/ (github page)
+     https://swjain.github.io/url-shortener/ (github page)
 
 Note: Application stores persistent data at "~/.urlshortener/data" directory.
